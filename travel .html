@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- AOS JS -->
+  <style>
+    body {
+      scroll-behavior: smooth;
+      background-color: #002f2f;
+      color: white;
+    }
+    section {
+      padding: 100px 0;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      transition: color 0.3s;
+    }
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+      transition: background-color 0.5s ease;
+    }
+    .hero {
+      background: url('/home1\ \(1\).jpg ') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .hero::before{
+      content: "";
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);/*
+      dark overlay for better text visiblity */
+      z-index: 0;
+    }
+    .hero.container {
+      z-index: 2;
+      position: relative;
+    }
+    .btn-primary {
+      background-color: teal;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+    .corner-img {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  z-index: 3;
+}
+.corner-box {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 15px;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.corner-box img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.corner-text {
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      background-color: teal;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">Travel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#discover">Discover</a></li>
+        <li class="nav-item"><a class="nav-link" href="#places">Places</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container text-white d-flex align-items-center justify-content-center flex-column flex-md-row" style="position: relative; z-index: 2;">
+    <div class="text-center text-md-start" data-aos="fade-up">
+      <h1>Explore The Best <strong>Beautiful Beaches</strong></h1>
+      <p>Discover your place</p>
+      <a href="#about" class="btn btn-primary mt-3">Explore</a>
+    </div>
+   </div>
+   <div class="corner-box" data-aos="zoom-in">
+    <p class="corner-text">5 best places <br> to vist <br>More</p>
+    <img src="home1.jpg" alt="Corner Beach">
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container text-center">
+  <h2 data-aos="fade-right">More Information About The Best Beaches</h2>
+  <p data-aos="fade-left">You can find the most beautiful and pleasant place
+    s at the best prices with special discounts.
+   <br>you choose the place we will guide you all way to wait.get your place now  </p>
+  <a href="#places" class="btn btn-primary mt-2" data-aos="zoom-in">Reserve a place</a>
+
+  <!-- Two side-by-side images -->
+  <div class="row mt-5">
+    <div class="col-md-6" data-aos="fade-up">
+      <img src="about1.jpg" alt="About Image 1" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <img src="about2.jpg" alt="About Image 2" class="img-fluid rounded">
+    </div>
+  </div>
+</section>
+
+<!-- Discover Section -->
+<section id="discover" class="container text-center">
+  <h2 data-aos="fade-up">Discover The Most Attractive Places</h2>
+  <div class="row mt-4">
+    <div class="col-md-4" data-aos="fade-up">
+      <img src="discover4.jpg" alt="Whitehaven" class="img-fluid rounded mb-2">
+      <h4>Whitehaven</h4>
+      <p>32 tours available</p>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+      <img src="discover1.jpg" alt="Bali" class="img-fluid rounded mb-2">
+      <h4>Bali</h4>
+      <p>22 tours available</p>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <img src="discover2.jpg" alt="Hawaii" class="img-fluid rounded mb-2">
+      <h4>Hawaii</h4>
+      <p>15 tours available</p>
+    </div>
+  </div>
+</section>
+
+<!--Places Section -->
+<section id="places" class="container text-center">
+  <h2 data-aos="fade-up">Choose Your Place</h2>
+
+  <!-- First Row (3 Images) -->
+  <div class="row mt-4">
+    <div class="col-md-4 mb-4" data-aos="flip-left">
+      <img src="place1.jpg" class="img-fluid rounded mb-2" alt="Place 1">
+      <h5>Bali - $2499</h5>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="150">
+      <img src="place2.jpg" class="img-fluid rounded mb-2" alt="Place 2">
+      <h5>Bora Bora - $1599</h5>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+      <img src="place3.jpg" class="img-fluid rounded mb-2" alt="Place 3">
+      <h5>Hawaii - $3499</h5>
+    </div>
+  </div>
+
+  <!-- Second Row (2 Images Centered) -->
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="450">
+      <img src="place4 (1).jpg" class="img-fluid rounded mb-2" alt="Place 4">
+      <h5>Maldives - $2899</h5>
+    </div>
+    <div class="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="600">
+      <img src="place5.jpg" class="img-fluid rounded mb-2" alt="Place 5">
+      <h5>Ibiza - $1999</h5>
+    </div>
+  </div>
+</section>
+<!-- Video Tour Section -->
+<section id="videos" class="container text-center">
+  <h2 data-aos="fade-up">Watch Our Beach Tours</h2>
+  <div class="row mt-4">
+    <div class="col-md-6 mb-4" data-aos="zoom-in">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Bali Beach Tour" allowfullscreen></iframe>
+      </div>
+      <p class="mt-2">Bali Tour</p>
+    </div>
+    <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Hawaii Tour" allowfullscreen></iframe>
+      </div>
+      <p class="mt-2">Hawaii Tour</p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Signup Section -->
+<section class="bg-dark text-white text-center py-5" id="subscribe" data-aos="fade-up">
+  <div class="container">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Get updates on exclusive beach travel deals!</p>
+    <form class="row justify-content-center">
+      <div class="col-md-6 col-sm-8 mb-3">
+        <input type="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+      <div class="col-md-2 col-sm-4 mb-3">
+        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- Partner Logos and Text Section -->
+<section class="container py-5 text-center text-white">
+  <!-- Logo Row -->
+  <div class="row justify-content-center align-items-center g-4 mb-4">
+    <div class="col-6 col-md-2">
+      <img src="sponsors1.png" alt="Airbnb" class="img-fluid" style="max-height: 40px;">
+    </div>
+    <div class="col-6 col-md-2">
+      <img src="sponsors2.png" alt="Amazon" class="img-fluid" style="max-height: 40px;">
+    </div>
+    <div class="col-6 col-md-2">
+      <img src="sponsors3.png" alt="Shopify" class="img-fluid" style="max-height: 40px;">
+    </div>
+    <div class="col-6 col-md-2">
+      <img src="sponsors4.png" alt="PayPal" class="img-fluid" style="max-height: 40px;">
+    </div>
+    <div class="col-6 col-md-2">
+      <img src="sponsors5.png" alt="Slack" class="img-fluid" style="max-height: 40px;">
+    </div>
+  </div>
+
+  <!-- Footer Text Content -->
+  <div class="row text-start">
+    <div class="col-md-3">
+      <h5>Travel</h5>
+      <p>Travel you choose the destination, we offer you the experience.</p>
+      <div>
+        <a href="#"><i class="bi bi-facebook me-2"></i></a>
+        <a href="#"><i class="bi bi-twitter me-2"></i></a>
+        <a href="#"><i class="bi bi-instagram me-2"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h6>About</h6>
+      <ul class="list-unstyled">
+        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+        <li><a href="#" class="text-white text-decoration-none">Features</a></li>
+        <li><a href="#" class="text-white text-decoration-none">New & Blog</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h6>Company</h6>
+      <ul class="list-unstyled">
+        <li><a href="#" class="text-white text-decoration-none">Team</a></li>
+        <li><a href="#" class="text-white text-decoration-none">Plan & Pricing</a></li>
+        <li><a href="#" class="text-white text-decoration-none">Become a member</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <h6>Support</h6>
+      <ul class="list-unstyled">
+        <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+        <li><a href="#" class="text-white text-decoration-none">Support Center</a></li>
+        <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="bg-light mt-4">
+  <p class="text-center small">&copy; 2025 Travel Website. All rights reserved.</p>
+</section>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()">Top</button>
+
+<!-- JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  // Initialize AOS animations
+  AOS.init();
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNavbar');
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+
+    // Show/hide scroll to top button
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  // Scroll to top function
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
